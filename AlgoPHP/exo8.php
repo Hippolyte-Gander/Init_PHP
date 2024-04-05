@@ -9,15 +9,24 @@ Table de 8 :
 <?php
 
 $nbr = 8;
+$x=1;
 
+echo ("Affichage (pour la table de ". $nbr . ") :<br>");
 
-echo ("Affichage (pour la table de ". $nbr . ") :\n");
+//----------------------------------------------
 
-for ($x=0; $x < 10; $x++) {
-    echo ($x . " x " . $nbr . "  = " . $nbr * $x . "\n");
+// Solution 1 :
+// for ($x=1; $x < 11; $x++) {
+//     echo ($x . " x " . $nbr . "  = " . $nbr * $x . "<br>");
+// }
+
+//----------------------------------------------
+
+// Solution 2 :
+while ($x < 11) {
+    echo ($x . " x " . $nbr . "  = " . $nbr * $x . "<br>");
+    $x++;
 }
-
-
 
 
 
