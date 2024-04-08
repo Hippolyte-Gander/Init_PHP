@@ -10,15 +10,13 @@ La personne est imposable.</p>
 
 $sexe = "H";
 
-$age = 20;
+$age = 22;
 
 echo("Age : ". $age . "<br>");
 echo("Sexe : ". $sexe . "<br>");
 
 if ($sexe == "H" or $sexe == "F") {
-    if ($age >= 18 and $age <= 35 and $sexe == "F") {
-        echo("La personne est imposable.");
-    } elseif ($age > 20 and $sexe == "H") {
+    if (($age >= 18 && $age <= 35 && $sexe == "F") || ($age > 20 && $sexe == "H")) {
         echo("La personne est imposable.");
     } else {
         echo "La personne n'est pas imposable.";

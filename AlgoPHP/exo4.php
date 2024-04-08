@@ -16,9 +16,9 @@ $phrase_inverse = strrev($p1);
 
 
 if ($p1 <> $phrase_inverse) {
-    echo "La phrase «". $phrase ."» n'est pas un palindrome.";
+    echo "La phrase « $phrase » n'est pas un palindrome.";
 } else {
-    echo "La phrase «". $phrase ."» est un palindrome.";
+    echo "La phrase « $phrase » est un palindrome.";
 }
 
 

@@ -10,16 +10,17 @@ L’enfant qui a 10 ans appartient à la catégorie « Minime »</p>
 
 <?php
 
-$age = 10;
+$age = 8;
+$categorie = "L’enfant qui a $age ans appartient à la catégorie ";
 
 if ($age >= 12) {
-    echo ("L’enfant qui a " . $age . " ans appartient à la catégorie « Cadet »");
+    echo ("$categorie « Cadet »");
 } elseif ($age >= 10) {
-    echo ("L’enfant qui a " . $age . " ans appartient à la catégorie « Minime »");
+    echo ("$categorie « Minime »");
 } elseif ($age >= 8) {
-    echo ("L’enfant qui a " . $age . " ans appartient à la catégorie « Pupille »");
+    echo ("$categorie « Pupille »");
 } elseif ($age >= 6) {
-    echo ("L’enfant qui a " . $age . " ans appartient à la catégorie « Poussin »");
+    echo ("$categorie « Poussin »");
 } else {
     echo ("La personne n'est dans aucune de ces catégorie.");
 }

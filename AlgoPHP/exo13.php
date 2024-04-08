@@ -10,8 +10,8 @@ $notes = [10, 12, 8, 19, 3, 16, 11, 13, 9];
 $nbnotes = count($notes);
 $moyenne = round(array_sum($notes) / $nbnotes, 2);
 
-function AffTab($notes) { foreach($notes as $x) {
-    echo "$x ";
+function AffTab($notes) { foreach($notes as $note) {
+    echo "$note ";
 }
 }
 echo "Les notes obtenues par l’élève sont : ";

@@ -13,7 +13,7 @@ $veuro = $vfranc / 6.5596;
 
 $veuro = round($veuro, 2);
 
-echo ($vfranc . " francs fait " . $veuro . " euros.")
+echo $vfranc . " francs fait " . $veuro . " euros."
 
 
 

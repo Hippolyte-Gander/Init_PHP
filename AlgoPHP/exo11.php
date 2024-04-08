@@ -13,8 +13,8 @@ Mercedes</p>
 $cars = array("Peugeot", "Renault", "BMW", "Mercedes");
 
 echo "Il y a " . count($cars) . " marques de voiture dans le tableau :<br>";
-foreach ($cars as $x) {
-    echo "- $x <br>";
+foreach ($cars as $car) {
+    echo "- $car <br>";
   }
 
 

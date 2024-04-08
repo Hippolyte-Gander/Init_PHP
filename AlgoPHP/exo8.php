@@ -11,20 +11,20 @@ Table de 8 :
 $nbr = 8;
 $x=1;
 
-echo ("Affichage (pour la table de ". $nbr . ") :<br>");
+echo "Affichage (pour la table de ". $nbr . ") :<br>";
 
-//----------------------------------------------
 
 // Solution 1 :
-// for ($x=1; $x < 11; $x++) {
-//     echo ($x . " x " . $nbr . "  = " . $nbr * $x . "<br>");
-// }
+for ($x=1; $x < 11; $x++) {
+    echo ($x . " x " . $nbr . "  = " . $nbr * $x . "<br>");
+}
+echo "<br>";
 
-//----------------------------------------------
 
 // Solution 2 :
+$x = 1;
 while ($x < 11) {
-    echo ($x . " x " . $nbr . "  = " . $nbr * $x . "<br>");
+    echo ("$x  x  $nbr   =  " . $nbr * $x . "<br>");
     $x++;
 }
 

@@ -12,7 +12,7 @@ XI. Exercice</p>
 <?php
 
 $sumapaye = 152;
-$sumverse = 200;
+$sumverse = 221;
 $resteapayer = $sumverse - $sumapaye;
 
 $nbr10 = 0;
@@ -21,6 +21,8 @@ $nbr2 = 0;
 $nbr1 = 0;
 
 $rendu = $resteapayer;
+
+// Première solution
 
 while ($rendu != 0) {
     if ($rendu >= 10) {
@@ -41,7 +43,19 @@ while ($rendu != 0) {
 }
 
 echo "Rendue de monnaie :<br>";
-echo $nbr10 . " billets de 10€ - " . $nbr5 . " billets de 5€ - ". $nbr2 . " pièces de 2€ - " . $nbr1 . " pièces de 1€ - "
+echo "$nbr10 billets de 10€ - $nbr5 billets de 5€  $nbr2 pièces de 2€ - $nbr1 pièces de 1€ <br> ";
+
+// Deuxième solution
+
+$reste10 = intdiv ($resteapayer, 10);
+$reste5 = intdiv (($resteapayer - 10 * $reste10), 5);
+$reste2 = intdiv (($resteapayer - 10 * $reste10 - 5 * $reste5), 2);
+$reste1 = intdiv (($resteapayer - 10 * $reste10 - 5 * $reste5 - 2 * $reste2), 1);
+
+echo "$reste10 billets de 10€ - $reste5 billets de 5€  $reste2 pièces de 2€ - $reste1 pièces de 1€ <br> ";
+
+
+
 
 
 

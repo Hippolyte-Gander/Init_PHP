@@ -12,24 +12,39 @@ Hola Virgile</p>
 
 <?php
 
-$fra = "Salut";
-$esp = "Hola";
-$eng = "Hello";
+$people = [
+  "Mickaël" => "FRA",
+  "Virgile" => "ESP",
+  "Marie-Claire" => "ENG"
+  ];
 
-$people = array("Mickaël"=>"$fra", "Virgile"=>"$esp", "Marie-Claire"=>"$eng");
 
 foreach ($people as $prenom => $pays) {
-    echo "$pays $prenom<br>";
+  if ($pays == "FRA") {
+    echo "Salut $prenom <br>";
+  } elseif ($pays == "ESP") {
+    echo "Hola $prenom <br>";
+  } elseif ($pays == "ENG") {
+    echo "Hello $prenom <br>";
+  } else {
+    echo "Erreur";
   }
+}
 
 echo "<br> ";
 
 ksort($people);
 
-foreach ($people as $x => $y) {
-    echo "$y $x <br>";
+foreach ($people as $prenom => $pays) {
+  if ($pays == "FRA") {
+    echo "Salut $prenom <br>";
+  } elseif ($pays == "ESP") {
+    echo "Hola $prenom <br>";
+  } elseif ($pays == "ENG") {
+    echo "Hello $prenom <br>";
+  } else {
+    echo "Erreur";
   }
-
-
+}
 
 ?>
