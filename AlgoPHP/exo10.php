@@ -55,11 +55,4 @@ $reste1 = intdiv (($resteapayer - 10 * $reste10 - 5 * $reste5 - 2 * $reste2), 1)
 echo "$reste10 billets de 10€ - $reste5 billets de 5€  $reste2 pièces de 2€ - $reste1 pièces de 1€ <br> ";
 
 
-
-
-
-
-
-
-
 ?>

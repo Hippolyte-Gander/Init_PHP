@@ -47,4 +47,23 @@ foreach ($people as $prenom => $pays) {
   }
 }
 
+// Solution 2 :
+
+$salutations = ["FRA" => "Salut","ESP" => "Hola","ENG" => "Hello"];
+
+foreach ($personnes as $prenom => $langue) {
+  if (in_array($langue, array_keys($salutations))){
+    $bonjour = $salutations[$langue];
+    // $salutations["FRA"] -> "Salut"
+    // $salutations["ESP"] -> "Hola"
+    echo "$bonjour $prenom<br>";
+  } else {
+    echo "Langue non gérée pour $prenom <br>";
+  }
+}
+
+
+
+
+
 ?>
