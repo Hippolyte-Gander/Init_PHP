@@ -10,6 +10,21 @@ Alice DUCHEMIN a … ans</p>
 
 <?php
 
+require "exo15Personne.php";
+
+// spl_autoload_register(function ($class_name) {
+//     require "classes/" $class_name . '.php';
+// });
+
+
+
+$michel = new Personne("Michel", "DUPONT", "1980-02-19");
+$alice = new Personne("Alice", "DUPONT", "1985-01-17");
+
+echo $michel->getnom() ." ". $michel->getprenom()." a ". $michel->getage()."<br>";
+echo $alice->getnom() ." ". $alice->getprenom()." a ". $alice->getage()."<br>";
+
+
 
 
 
