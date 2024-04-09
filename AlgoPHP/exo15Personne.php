@@ -12,7 +12,7 @@
         }
     
         
-        public function getage() : string 
+        public function getAge() : string 
         {
             $date_actuelle = new DateTime();
             $age = $this->getDatenaissance()->diff($date_actuelle);
@@ -20,16 +20,13 @@
             return $age->format("%Y ans");
         }
 
-
-
-
-          
+        
         public function getNom() : string
         {
                 return $this->nom;
         }
 
-       public function setNom($nom)
+       public function setNom(string $nom)
         {
                 $this->nom = $nom;
 
@@ -41,7 +38,7 @@
                 return $this->prenom;
         }
 
-        public function setPrenom($prenom)
+        public function setPrenom(string $prenom)
         {
                 $this->prenom = $prenom;
 
@@ -60,7 +57,9 @@
                 return $this;
         }
 
-
+        public function __toString() {
+                return $this->prenom . " ". $this->nom. " a ". $this->getAge();
+        }
 
         
     }

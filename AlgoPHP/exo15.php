@@ -18,13 +18,14 @@ require "exo15Personne.php";
 
 
 
-$michel = new Personne("Michel", "DUPONT", "1980-02-19");
-$alice = new Personne("Alice", "DUPONT", "1985-01-17");
+$michel = new Personne("DUPONT","Michel",  "1980-02-19");
+$alice = new Personne( "DUPONT","Alice", "1985-01-17");
 
-echo $michel->getnom() ." ". $michel->getprenom()." a ". $michel->getage()."<br>";
-echo $alice->getnom() ." ". $alice->getprenom()." a ". $alice->getage()."<br>";
+// echo $michel->getNom() ." ". $michel->getPrenom()." a ". $michel->getAge()."<br>";   fonctionnne mais pas pratique
+// echo $alice->getNom() ." ". $alice->getPrenom()." a ". $alice->getAge()."<br>";
 
-
+echo $michel . "<br>";
+echo $alice
 
 
 
