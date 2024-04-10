@@ -6,29 +6,20 @@ $nomsInput = array("Nom","Prénom","Ville");
 afficherInput($nomsInput);</p>
 
 
-
-
 <?php
 
-function afficherInput() {
-    $nomsInput = ["Nom","Prénom","Ville"];
-    $nbrNoms = count($nomsInput);
-
-    $resulat = "<form>";
-
-    for ($i=0; $nbrNoms < $i ; $i++) { 
-        $resulat .= $nomsInput[$i]." <input type='text' name='name'><br>
-                            <input type='soumettre'>";
-   }
-
-
-
+function afficherInput($nomsInput) {
+    $resultat = "<form>";    
     
-   $resulat .= "</form>";
-
-
-    return $resulat;
+    foreach ($nomsInput as $nom) {
+        $resultat .= "<label for=$nom>$nom :</label><br>
+        <input id='' type='text' $nom name='$nom' $nom><br>";
+    }
+    $resultat .= "</form>";
+    return $resultat;
 }
 
-echo afficherInput();
+$nomsInput = ["Nom","Prénom","Ville"];
+echo afficherInput($nomsInput);
+
 ?>
