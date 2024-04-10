@@ -8,6 +8,20 @@ Coder l’ensemble des méthodes, accesseurs et mutateurs de la classe tout en r
 
 <?php
 
+require "exo13voiture.php";
+
+$v1 = new Voiture("Peugeot","408",5);
+$v2 = new Voiture("Citroën","C4",3);
+
+echo $v1 ."<br>";
+
+echo $v1->demarrer() . "<br>";
+echo $v1->accelerer(50) . "<br>";
+echo $v2->demarrer() . "<br>";
+echo $v2->stopper() . "<br>";
+echo $v2->accelerer(20) . "<br>";
+echo $v1->getphraseVitesseActuelle() . "<br>";
+echo $v2->getphraseVitesseActuelle() . "<br>";
 
 
 ?>
