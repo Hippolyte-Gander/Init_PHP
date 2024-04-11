@@ -5,7 +5,7 @@
         private string $modele;
         private int $nbPortes;
         private string $vitesseActuelle;
-        private string $etat;
+        private bool $etat;
 
 
         public function __construct(string $marque, string $modele, int $nbPortes) {
@@ -17,7 +17,7 @@
         }
 
         public function etatvoiture() {
-            if ($this->etat == true) {
+            if ($this->etat) {
                 $result = "démarré";
             } elseif ($this->etat == false) {
                 $result = "à l'arrêt";
@@ -28,7 +28,7 @@
         }
 
         public function demarrer() {
-            if ($this->etat == true) {
+            if ($this->etat) {
                 $result = "Le véhicule $this->marque $this->modele est déjà démarré";
             } elseif ($this->etat == false) {
                 $this->etat = true;
@@ -39,12 +39,12 @@
             return $result;
         }
         
-        public function accelerer($acceleration) {
+        public function accelerer(int $changementvitesse) {
             if ($this->etat == true) {
-                $this->vitesseActuelle = $acceleration;
-                $result = "Le véhicule $this->marque $this->modele accélère de $acceleration km/h";
+                $this->vitesseActuelle = $changementvitesse;
+                $result = "Le véhicule $this->marque $this->modele accélère de $changementvitesse km/h";
             } elseif ($this->etat == false) {
-                $result = "Le véhicule $this->marque $this->modele veut accélerer de $acceleration<br>Pour accélérer, il faut démarrer le véhicule $this->marque $this->modele";
+                $result = "Le véhicule $this->marque $this->modele veut accélerer de $changementvitesse<br>Pour accélérer, il faut démarrer le véhicule $this->marque $this->modele";
             } else {
                 $result = "Erreur2";
             }
@@ -61,9 +61,29 @@
                 $result = "Erreur3";
             }
             return $result;
+        }
+        
+        public function ralentir($changementvitesse) {
+            if(gettype($changementvitesse) == "int") {
+                if ($changementvitesse > $this->vitesseActuelle) {
+                    $this->vitesseActuelle = 0;
+                    $result = "Le véhicule $this->marque $this->modele s'arrête";
+                } elseif ($changementvitesse < $this->vitesseActuelle) {
+                    $this->vitesseActuelle = $this->vitesseActuelle - $changementvitesse;
+                    $result = "Le véhicule $this->marque $this->modele ralentit de $changementvitesse km/h";
+                } else {
+                    $result = "Erreur4";
+                }
+                return $result;
+            } else {
+                return "veuillez saisir un entier !";
             }
+            
+        }
+
+
 # début des get /set-----------------------------------------------------------
-        public function getMarque()
+        public function getMarque(): string
         {
                 return $this->marque;
         }
@@ -75,7 +95,7 @@
                 return $this;
         }
 
-        public function getModele()
+        public function getModele(): string
         {
                 return $this->modele;
         }
@@ -87,7 +107,7 @@
                 return $this;
         }
 
-        public function getNbPortes()
+        public function getNbPortes(): int
         {
                 return $this->nbPortes;
         }
@@ -106,7 +126,7 @@
 // Pour simplifier le phrasage :
         public function getphraseVitesseActuelle()
         {
-                return "La vitesse du véhicule $this->marque $this->modele est de $this->vitesseActuelle km/h";
+                return "La vitesse du véhicule $this est de $this->vitesseActuelle km/h";
         }
 
         public function setVitesseActuelle($vitesseActuelle)
@@ -121,7 +141,7 @@
                 return $this->etat;
         }
     
-        public function setEtat($etat)
+        public function setEtat(bool $etat)
         {
                 $this->etat = $etat;
     
@@ -130,24 +150,17 @@
 
 # fin des get /set-----------------------------------------------------------
 
-        public function __toString() {
-            return "Nom et modèle du véhicule : ". $this->marque ." ". $this->modele. "<br>".
+        public function getInfos() {            
+            return "Nom et modèle du véhicule : $this<br>".
             "Nombre de portes : " . $this->nbPortes . "<br>" .
             "Le véhicule ". $this->marque . " est ". $this->etatvoiture() ."<br>" .
             "Sa vitesse actuelle est de : " . $this->vitesseActuelle . " km/h<br>";
+        }
+
+        public function __toString()
+        {
+            return "$this->marque $this->modele";
+        }
     }
-
-
-
-
-    
-    }
-
-
-
-
-
-
-
-
+   
 ?>

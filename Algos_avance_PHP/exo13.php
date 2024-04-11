@@ -13,15 +13,20 @@ require "exo13voiture.php";
 $v1 = new Voiture("Peugeot","408",5);
 $v2 = new Voiture("Citroën","C4",3);
 
-echo $v1 ."<br>";
+echo "Infos véhicule 1 <br>***************************<br>" . $v1 ."<br>";
+echo "Infos véhicule 2 <br>***************************<br>" .$v2 ."<br>";
 
 echo $v1->demarrer() . "<br>";
 echo $v1->accelerer(50) . "<br>";
-echo $v2->demarrer() . "<br>";
-echo $v2->stopper() . "<br>";
-echo $v2->accelerer(20) . "<br>";
+// echo $v2->demarrer() . "<br>";
+// echo $v2->stopper() . "<br>";
+// echo $v2->accelerer(20) . "<br>";
 echo $v1->getphraseVitesseActuelle() . "<br>";
-echo $v2->getphraseVitesseActuelle() . "<br>";
+// echo $v2->getphraseVitesseActuelle() . "<br>";
 
+echo $v1->ralentir(60) . "<br>";
+echo $v1->getphraseVitesseActuelle() . "<br>";
+
+$v1->ralentir("aaaa");
 
 ?>
