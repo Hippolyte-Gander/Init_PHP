@@ -9,7 +9,7 @@
 function afficherRadio($elements) {
     $result = "";
     foreach ($elements as $element) {
-        $result .= "<input type='radio' name='genre' value='$element'>$element</input><br>";
+        $result .= "<input type='radio' name='genre' value='$element' checked='checked'>$element</input><br>";
     }
     return $result;
 }

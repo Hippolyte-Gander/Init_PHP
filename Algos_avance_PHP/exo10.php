@@ -6,22 +6,39 @@ Le formulaire devra également comporter un bouton permettant de le soumettre à
 
 <?php
 
+$nomsInput = ["Nom","Prénom","Adresse e-mail", "Ville"];
+$sexes = ["Femme", "Homme"];
+$formations = ["Développeur Logiciel","Designer web","Intégrateur","Chef de projet"];
+
+echo afficherInput($nomsInput, $sexes, $formations);
+
+
 function afficherInput($nomsInput, $sexes, $formations) {
+    return inputNoms($nomsInput) . inputSexes($sexes) . inputFormations($formations);
+}
+
+function inputNoms($nomsInput) {
     $resultat = "<form>";
-    
     foreach ($nomsInput as $nom) {
         $resultat .= "<label for=$nom>$nom :</label><br>
         <input id='' type='text' $nom name='$nom' $nom><br>";
     }
     $resultat .= "</form>";
+    return $resultat;
+}
 
-    $resultat .= "<label>Sexe : </label><select>";
-
+function inputSexes($sexes) {
+    $resultat = "<label>Sexe : </label><select>";
+    
     foreach ($sexes as $sexe) {
         $resultat .= "<option value='$sexe'>$sexe</option>";
     }
     $resultat .= "</select><br>";
+    return $resultat;
+}
 
+function inputFormations($formations) {
+    $resultat ="";
     foreach ($formations as $formation) {
         $resultat .= "<input type='radio' name='genre' value='$formation'>$formation</input><br>";
     }
@@ -29,10 +46,27 @@ function afficherInput($nomsInput, $sexes, $formations) {
     return $resultat;
 }
 
-$nomsInput = ["Nom","Prénom","Adresse e-mail", "Ville"];
-$sexes = ["Femme", "Homme"];
-$formations = ["Développeur Logiciel","Designer web","Intégrateur","Chef de projet"];
 
-echo afficherInput($nomsInput, $sexes, $formations);
+#méthode précédente : une seule fonction mais beaucoup trop grande :
+// $resultat .= "</form>";
+// foreach ($nomsInput as $nom) {
+    //     $resultat .= "<label for=$nom>$nom :</label><br>
+    //     <input id='' type='text' $nom name='$nom' $nom><br>";
+    // }
+    // $resultat .= "</form>";
+    
+    // $resultat .= "<label>Sexe : </label><select>";
+    
+    // foreach ($sexes as $sexe) {
+        //     $resultat .= "<option value='$sexe'>$sexe</option>";
+        // }
+        // $resultat .= "</select><br>";
+
+// foreach ($formations as $formation) {
+//     $resultat .= "<input type='radio' name='genre' value='$formation'>$formation</input><br>";
+// }
+// $resultat .= "<button type='submit'>Valider</button>";
+// return $resultat;
+
 
 ?>

@@ -13,8 +13,8 @@ require "exo13voiture.php";
 $v1 = new Voiture("Peugeot","408",5);
 $v2 = new Voiture("Citroën","C4",3);
 
-echo "Infos véhicule 1 <br>***************************<br>" . $v1 ."<br>";
-echo "Infos véhicule 2 <br>***************************<br>" .$v2 ."<br>";
+echo "Infos véhicule 1 <br>***************************<br>" . $v1->getInfos() ."<br>";
+echo "Infos véhicule 2 <br>***************************<br>" .$v2->getInfos() ."<br>";
 
 echo $v1->demarrer() . "<br>";
 echo $v1->accelerer(50) . "<br>";

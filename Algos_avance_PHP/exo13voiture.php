@@ -29,10 +29,10 @@
 
         public function demarrer() {
             if ($this->etat) {
-                $result = "Le véhicule $this->marque $this->modele est déjà démarré";
+                $result = "Le véhicule $this est déjà démarré";
             } elseif ($this->etat == false) {
                 $this->etat = true;
-                $result = "Le véhicule $this->marque $this->modele démarre";
+                $result = "Le véhicule $this démarre";
             } else {
                 $result = "Erreur1";
             }
@@ -42,9 +42,9 @@
         public function accelerer(int $changementvitesse) {
             if ($this->etat == true) {
                 $this->vitesseActuelle = $changementvitesse;
-                $result = "Le véhicule $this->marque $this->modele accélère de $changementvitesse km/h";
+                $result = "Le véhicule $this accélère de $changementvitesse km/h";
             } elseif ($this->etat == false) {
-                $result = "Le véhicule $this->marque $this->modele veut accélerer de $changementvitesse<br>Pour accélérer, il faut démarrer le véhicule $this->marque $this->modele";
+                $result = "Le véhicule $this veut accélerer de $changementvitesse<br>Pour accélérer, il faut démarrer le véhicule $this";
             } else {
                 $result = "Erreur2";
             }
@@ -53,10 +53,10 @@
         
         public function stopper() {
             if ($this->etat == false) {
-                $result = "Le véhicule $this->marque $this->modele est déjà stoppé";
+                $result = "Le véhicule $this est déjà stoppé";
             } elseif ($this->etat == true) {
                 $this->etat = false;
-                $result = "Le véhicule $this->marque $this->modele est stoppé";
+                $result = "Le véhicule $this est stoppé";
             } else {
                 $result = "Erreur3";
             }
@@ -67,10 +67,10 @@
             if(gettype($changementvitesse) == "int") {
                 if ($changementvitesse > $this->vitesseActuelle) {
                     $this->vitesseActuelle = 0;
-                    $result = "Le véhicule $this->marque $this->modele s'arrête";
+                    $result = "Le véhicule $this s'arrête";
                 } elseif ($changementvitesse < $this->vitesseActuelle) {
                     $this->vitesseActuelle = $this->vitesseActuelle - $changementvitesse;
-                    $result = "Le véhicule $this->marque $this->modele ralentit de $changementvitesse km/h";
+                    $result = "Le véhicule $this ralentit de $changementvitesse km/h";
                 } else {
                     $result = "Erreur4";
                 }

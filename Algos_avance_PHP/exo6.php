@@ -12,7 +12,7 @@ alimenterListeDeroulante($elements);</p>
 
 function alimenterListeDeroulante($elements) {
     $result = "<label>Quelle est votre dénomination ? </label><select name='Dénomination'>";
-    #j'ai essayé d'afficher "Dénomination" sur la liste déroulante avant que l'on clique dessus mais cela ne s'affiche pas
+    #j'ai essayé d'afficher "Dénomination" sur la liste déroulante avant que l'on clique dessus mais cela ne s'affiche pas --> le "name=" sert pour le CSS uniquement
 
     foreach ($elements as $element) {
         $result .= "<option value='$element'>$element</option>";
